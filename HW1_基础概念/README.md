@@ -1,3 +1,9 @@
+---
+title: Unity-基础概念
+date: 2018-03-21 19:28:39
+tags: Unity-3d
+category: Unity-3d
+---
 # Homework_1
 
 <!--more-->
@@ -15,7 +21,7 @@
     + 联系
         > 资源被导入到游戏中，与游戏对象相互配合以此完成相应功能。
 
-1. 编写一个代码，使用 debug 语句来验证 MonoBehaviour基本行为或事件触发的条件
+1. 编写一个代码，使用 debug 语句来验证 MonoBehaviour 基本行为或事件触发的条件
     + 基本行为包括 Awake() Start() Update() FixedUpdate() LateUpdate()
     + 常用事件包括 OnGUI() OnDisable() OnEnable()
 
@@ -88,7 +94,7 @@
             + Components are the nuts & bolts of objects and behaviors in a game.
             + 组件是游戏对象和其对应行为之间的枢纽。
 
-    + 描述下图中 table 对象(实体)的属性、table 的 Transform 的属性、 table 的 部件
+    + 描述下图中 table 对象(实体)的属性、table 的 Transform 的属性、 table 的部件
 
         ![example](基础概念/example.png)
 
@@ -102,10 +108,9 @@
         >       + Scale   : (1, 1, 1)
         >
         >1. table 的 部件
-        >       + chair1
-        >       + chair2
-        >       + chair3
-        >       + chair4
+        >       + Transform
+        >       + Mesh Renderer
+        >       + Box Collider
 
     + 用 UML 图描述 三者的关系(请使用 UMLet 14.1.1 stand-alone版本出图)
         >![relation](基础概念/relationship.jpg)
@@ -143,10 +148,22 @@
         }
         ```
 
-1. 预设(Prefabs)有什么好处？与对象克隆 (clone or copy or Instantiate of Unity Object) 关系？
-    >预设是一种资源。向场景添加一个预设时，就会创建它的一个实例。所以预设可以看作游戏对象的模板。当对预设作出任何更改时，这些更改将应用于所有与之链接的实例。
-    >
-    >对象克隆，就是 clone 或者 copy 了一个原本对象的实例，二者之间没有相互影响。
+1. 预设与克隆
+    + 预设(Prefabs)有什么好处？与对象克隆 (clone or copy or Instantiate of Unity Object) 关系？
+        >预设是一种资源。向场景添加一个预设时，就会创建它的一个实例。所以预设可以看作游戏对象的模板。当对预设作出任何更改时，这些更改将应用于所有与之链接的实例。
+        >
+        >对象克隆，就是 clone 或者 copy 了一个原本对象的实例，二者之间没有相互影响。
+    + 制作 table 预制，写一段代码将 table 预制资源实例化成游戏对象
+        ```cs
+        public class NewBehaviourScript : MonoBehaviour {
+            private string prePath = "prefabs/table";
+            // Use this for initialization
+            void Start () {
+                GameObject Table =
+                    Instantiate(Resource.Load(prePath), new Vector(4, 0, 0), Quaternion.identity) as GameObject;
+            }
+        }
+        ```
 
 1. 尝试解释组合模式(Composite Pattern / 一种设计模式)并使用 BroadcastMessage() 方法向子对象发送消息
     >组合模式是将对象组合成树形结构，以表示“部分整体”的层次结构，并使得用户对单个对象和组合对象的使用具有一致性。
