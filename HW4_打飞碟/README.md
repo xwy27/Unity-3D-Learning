@@ -4,6 +4,8 @@
 
 简单的打飞碟游戏
 
+**[Video 演示](http://www.iqiyi.com/w_19ryb0juc5.html)**
+
 **[个人github](https://github.com/xwy27/Unity-3D-Learning)**
 
 ## 飞碟游戏
