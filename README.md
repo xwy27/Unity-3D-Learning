@@ -40,3 +40,22 @@
         1. 玩家通过方向按键控制
         1. 被巡逻兵追到则失败
         1. 甩开巡逻兵，则该巡逻兵不再追逐
+
+1. HomeWork_7
+
+    1. ParticleRing
+        模仿 [remember](http://i-remember.fr/en) 的粒子光环效果。 其中，鼠标悬浮光环中心，光环会收缩，移开后恢复
+
+1. HomeWork_8
+
+    1. GUI 系统
+        GUI 信纸滚动条，可自动根据内容扩展长度。
+        [Blog](https://xwy27.github.io/Unity-3d/UI-BulletinBoard/)
+
+1. HomeWork_9
+
+    1. 智能AI
+        重写 [牧师与魔鬼](https://github.com/xwy27/Unity-3D-Learning/tree/master/HW2_%E7%89%A7%E5%B8%88%E4%B8%8E%E9%AD%94%E9%AC%BC)，添加状态图转换的寻路，达到 AI 效果
+        1. 角色颜色区分：绿色牧师，红色魔鬼，棕色船只
+        1. 根据当前状态给出最短正确路径的下一状态 交由代码运算，而非直接根据手写状态图进行简单的 if-else 给出
+        优点：游戏状态增加时，只需更改状态变化的逻辑代码，而不必重写状态图
